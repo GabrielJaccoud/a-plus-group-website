@@ -11,6 +11,8 @@ const montserrat = Montserrat({
   display: 'swap'
 })
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   title: 'A+ ENGENHARIA: Construindo o Futuro, Transformando Investimentos',
   description: 'A+ ENGENHARIA une excelência em construção, neuroarquitetura e tecnologia financeira para criar empreendimentos com propósito e valorização exponencial. Soluções inovadoras em tokenização, crédito próprio e financiamento flexível.',
@@ -20,11 +22,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A+ ENGENHARIA: Construindo o Futuro, Transformando Investimentos',
     description: 'A+ ENGENHARIA une excelência em construção, neuroarquitetura e tecnologia financeira para criar empreendimentos com propósito e valorização exponencial.',
-    url: 'https://gabrieljaccoud.github.io/a-plus-group-website/',
+    url: `https://gabrieljaccoud.github.io${BASE_PATH}/`,
     siteName: 'A+ ENGENHARIA',
     images: [
       {
-        url: 'https://gabrieljaccoud.github.io/a-plus-group-website/images/hero_background.png', // Replace with actual image URL
+        url: `https://gabrieljaccoud.github.io${BASE_PATH}/images/hero_background.png`, // Replace with actual image URL
         width: 1200,
         height: 630,
         alt: 'A+ ENGENHARIA - Construindo o Futuro',
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'A+ ENGENHARIA: Construindo o Futuro, Transformando Investimentos',
     description: 'A+ ENGENHARIA une excelência em construção, neuroarquitetura e tecnologia financeira para criar empreendimentos com propósito e valorização exponencial.',
-    images: ['https://gabrieljaccoud.github.io/a-plus-group-website/images/hero_background.png'], // Replace with actual image URL
+    images: [`https://gabrieljaccoud.github.io${BASE_PATH}/images/hero_background.png`], // Replace with actual image URL
   },
 }
 
@@ -48,9 +50,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={montserrat.className} style={{ margin: 0, padding: 0, backgroundColor: '#f8fafc' }}>
+      <body className={montserrat.className}>
         <Header />
-        <main style={{ minHeight: '100vh' }}>
+        <main>
           {children}
         </main>
         <Footer />
